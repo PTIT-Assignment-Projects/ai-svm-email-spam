@@ -12,7 +12,7 @@ Demo sử dụng thư viện Streamlit để xây giao diện web sử dụng mo
 ## Yêu cầu
 
 - Tải sẵn docker
-- Có các file nhị phân model (`linear_svm.pkl`) và vectorizer  (`hashing_vectorizer.pkl`)
+- Có các file nhị phân model (`linear_svm.pkl`) và vectorizer  (`vectorizer.pkl`)
 
 ## Bắt đầu
 
