@@ -1,0 +1,181 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\sectionentry {1}{Giới thiệu}{3}{Giới thiệu}{0}}
+\headcommand {\slideentry {1}{0}{1}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\slideentry {1}{0}{2}{4/4}{}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\slideentry {1}{0}{3}{5/5}{}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\beamer@sectionpages {3}{5}}
+\headcommand {\beamer@subsectionpages {3}{5}}
+\headcommand {\sectionentry {2}{Lý thuyết}{6}{Lý thuyết}{0}}
+\headcommand {\slideentry {2}{0}{1}{6/6}{}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\beamer@subsectionpages {6}{6}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{7}{Lý thuyết SVM}}
+\headcommand {\slideentry {2}{1}{1}{7/7}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{1}{1}{8}{Hàm mục tiêu của SVM}}
+\headcommand {\slideentry {2}{1}{2}{8/8}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {2}{1}{3}{9/9}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\slideentry {2}{1}{4}{10/10}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\slideentry {2}{1}{5}{11/11}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\slideentry {2}{1}{6}{12/12}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\slideentry {2}{1}{7}{13/13}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{1}{2}{14}{Phương trình Lagrange và điều kiện KKT}}
+\headcommand {\slideentry {2}{1}{8}{14/14}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\slideentry {2}{1}{9}{15/15}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\slideentry {2}{1}{10}{16/16}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {2}{1}{11}{17/17}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {2}{1}{12}{18/18}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {2}{1}{13}{19/19}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {2}{1}{14}{20/20}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{1}{3}{21}{Ước lượng $\hat {\lambda }$}}
+\headcommand {\slideentry {2}{1}{15}{21/21}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\slideentry {2}{1}{16}{22/22}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\slideentry {2}{1}{17}{23/23}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {2}{1}{18}{24/24}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {2}{1}{19}{25/25}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\slideentry {2}{1}{20}{26/26}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{1}{4}{27}{Tìm $\hat {\mathbf {w}}$ và $\hat {b}$}}
+\headcommand {\slideentry {2}{1}{21}{27/27}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\slideentry {2}{1}{22}{28/28}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\slideentry {2}{1}{23}{29/29}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\slideentry {2}{1}{24}{30/30}{Lý thuyết SVM}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\beamer@subsectionpages {7}{30}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{31}{Thuật toán Pegasos}}
+\headcommand {\slideentry {2}{2}{1}{31/31}{Thuật toán Pegasos}{0}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{2}{1}{32}{Thuật toán Pegasos cơ bản}}
+\headcommand {\slideentry {2}{2}{2}{32/32}{Thuật toán Pegasos}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{2}{2}{33}{Bước chiếu}}
+\headcommand {\slideentry {2}{2}{3}{33/33}{Thuật toán Pegasos}{0}}
+\headcommand {\beamer@framepages {33}{33}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{2}{3}{34}{Hàm mục tiêu và hàm mất mát Hinge}}
+\headcommand {\slideentry {2}{2}{4}{34/34}{Thuật toán Pegasos}{0}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\slideentry {2}{2}{5}{35/35}{Thuật toán Pegasos}{0}}
+\headcommand {\beamer@framepages {35}{35}}
+\headcommand {\beamer@sectionpages {6}{35}}
+\headcommand {\beamer@subsectionpages {31}{35}}
+\headcommand {\sectionentry {3}{Cài đặt}{36}{Cài đặt}{0}}
+\headcommand {\slideentry {3}{0}{1}{36/36}{}{0}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\beamer@subsectionpages {36}{36}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{37}{Tiền xử lý và chuẩn bị dữ liệu}}
+\headcommand {\slideentry {3}{1}{1}{37/37}{Tiền xử lý và chuẩn bị dữ liệu}{0}}
+\headcommand {\beamer@framepages {37}{37}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{1}{1}{38}{Load dữ liệu}}
+\headcommand {\slideentry {3}{1}{2}{38/38}{Tiền xử lý và chuẩn bị dữ liệu}{0}}
+\headcommand {\beamer@framepages {38}{38}}
+\headcommand {\slideentry {3}{1}{3}{39/39}{Tiền xử lý và chuẩn bị dữ liệu}{0}}
+\headcommand {\beamer@framepages {39}{39}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{1}{2}{40}{Tiền xử lý dữ liệu}}
+\headcommand {\slideentry {3}{1}{4}{40/40}{Tiền xử lý và chuẩn bị dữ liệu}{0}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\slideentry {3}{1}{5}{41/41}{Tiền xử lý và chuẩn bị dữ liệu}{0}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\slideentry {3}{1}{6}{42/42}{Tiền xử lý và chuẩn bị dữ liệu}{0}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\slideentry {3}{1}{7}{43/43}{Tiền xử lý và chuẩn bị dữ liệu}{0}}
+\headcommand {\beamer@framepages {43}{43}}
+\headcommand {\slideentry {3}{1}{8}{44/44}{Tiền xử lý và chuẩn bị dữ liệu}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\slideentry {3}{1}{9}{45/45}{Tiền xử lý và chuẩn bị dữ liệu}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\slideentry {3}{1}{10}{46/46}{Tiền xử lý và chuẩn bị dữ liệu}{0}}
+\headcommand {\beamer@framepages {46}{46}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{1}{3}{47}{Chuẩn bị dữ liêu}}
+\headcommand {\slideentry {3}{1}{11}{47/47}{Tiền xử lý và chuẩn bị dữ liệu}{0}}
+\headcommand {\beamer@framepages {47}{47}}
+\headcommand {\beamer@subsectionpages {37}{47}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{48}{Mô hình HardMarginSVM}}
+\headcommand {\slideentry {3}{2}{1}{48/48}{Mô hình HardMarginSVM}{0}}
+\headcommand {\beamer@framepages {48}{48}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{2}{1}{49}{Viết mô hình HardMarginSVM}}
+\headcommand {\slideentry {3}{2}{2}{49/49}{Mô hình HardMarginSVM}{0}}
+\headcommand {\beamer@framepages {49}{49}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{2}{2}{50}{Chạy thử trên tập dữ liệu 2000 mẫu}}
+\headcommand {\slideentry {3}{2}{3}{50/50}{Mô hình HardMarginSVM}{0}}
+\headcommand {\beamer@framepages {50}{50}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{2}{3}{51}{Vấn đề}}
+\headcommand {\slideentry {3}{2}{4}{51/51}{Mô hình HardMarginSVM}{0}}
+\headcommand {\beamer@framepages {51}{51}}
+\headcommand {\slideentry {3}{2}{5}{52/52}{Mô hình HardMarginSVM}{0}}
+\headcommand {\beamer@framepages {52}{52}}
+\headcommand {\beamer@subsectionpages {48}{52}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{53}{Mô hình SVM tối ưu bởi thuật toán Pegasos}}
+\headcommand {\slideentry {3}{3}{1}{53/53}{Mô hình SVM tối ưu bởi thuật toán Pegasos}{0}}
+\headcommand {\beamer@framepages {53}{53}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{3}{1}{54}{Viết mô hình}}
+\headcommand {\slideentry {3}{3}{2}{54/54}{Mô hình SVM tối ưu bởi thuật toán Pegasos}{0}}
+\headcommand {\beamer@framepages {54}{54}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{3}{2}{55}{Chạy thử trên tập dữ liệu}}
+\headcommand {\slideentry {3}{3}{3}{55/55}{Mô hình SVM tối ưu bởi thuật toán Pegasos}{0}}
+\headcommand {\beamer@framepages {55}{55}}
+\headcommand {\beamer@subsubsectionentry {0}{3}{3}{3}{56}{So sánh với HardMarginSVM}}
+\headcommand {\slideentry {3}{3}{4}{56/56}{Mô hình SVM tối ưu bởi thuật toán Pegasos}{0}}
+\headcommand {\beamer@framepages {56}{56}}
+\headcommand {\slideentry {3}{3}{5}{57/57}{Mô hình SVM tối ưu bởi thuật toán Pegasos}{0}}
+\headcommand {\beamer@framepages {57}{57}}
+\headcommand {\beamer@subsectionpages {53}{57}}
+\headcommand {\beamer@subsectionentry {0}{3}{4}{58}{Chạy với bộ dữ liệu ban đầu và lưu mô hình}}
+\headcommand {\slideentry {3}{4}{1}{58/58}{Chạy với bộ dữ liệu ban đầu và lưu mô hình}{0}}
+\headcommand {\beamer@framepages {58}{58}}
+\headcommand {\slideentry {3}{4}{2}{59/59}{Chạy với bộ dữ liệu ban đầu và lưu mô hình}{0}}
+\headcommand {\beamer@framepages {59}{59}}
+\headcommand {\slideentry {3}{4}{3}{60/60}{Chạy với bộ dữ liệu ban đầu và lưu mô hình}{0}}
+\headcommand {\beamer@framepages {60}{60}}
+\headcommand {\beamer@sectionpages {36}{60}}
+\headcommand {\beamer@subsectionpages {58}{60}}
+\headcommand {\sectionentry {4}{Triển khai và demo}{61}{Triển khai và demo}{0}}
+\headcommand {\slideentry {4}{0}{1}{61/61}{}{0}}
+\headcommand {\beamer@framepages {61}{61}}
+\headcommand {\beamer@subsectionpages {61}{61}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{62}{Mô tả cách triển khai}}
+\headcommand {\slideentry {4}{1}{1}{62/62}{Mô tả cách triển khai}{0}}
+\headcommand {\beamer@framepages {62}{62}}
+\headcommand {\slideentry {4}{1}{2}{63/63}{Mô tả cách triển khai}{0}}
+\headcommand {\beamer@framepages {63}{63}}
+\headcommand {\slideentry {4}{1}{3}{64/64}{Mô tả cách triển khai}{0}}
+\headcommand {\beamer@framepages {64}{64}}
+\headcommand {\slideentry {4}{1}{4}{65/65}{Mô tả cách triển khai}{0}}
+\headcommand {\beamer@framepages {65}{65}}
+\headcommand {\slideentry {4}{1}{5}{66/66}{Mô tả cách triển khai}{0}}
+\headcommand {\beamer@framepages {66}{66}}
+\headcommand {\slideentry {4}{1}{6}{67/67}{Mô tả cách triển khai}{0}}
+\headcommand {\beamer@framepages {67}{67}}
+\headcommand {\beamer@partpages {1}{67}}
+\headcommand {\beamer@subsectionpages {62}{67}}
+\headcommand {\beamer@sectionpages {61}{67}}
+\headcommand {\beamer@documentpages {67}}
+\headcommand {\gdef \inserttotalframenumber {67}}
