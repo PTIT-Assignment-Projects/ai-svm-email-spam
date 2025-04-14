@@ -1,15 +1,19 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import re
 import nltk
-import string
-import pickle
+import numpy as np
+nltk.download('stopwords')
+nltk.download('punkt_tab')
 from nltk.corpus import stopwords
-from nltk.stem.porter import PorterStemmer
 from nltk.tokenize import word_tokenize
-from bs4 import BeautifulSoup
-from sklearn.feature_extraction.text import HashingVectorizer
+import re
+from nltk.stem import SnowballStemmer
+import time
+import pickle
+import string
+import re
+from sklearn.feature_extraction.text import TfidfVectorizer
+from scipy.sparse import csr_matrix
 
 @st.cache_resource
 def download_nltk_resources():
@@ -18,68 +22,87 @@ def download_nltk_resources():
     
 download_nltk_resources()
 
-class LinearSVM:
-    def __init__(self, C=1.0, max_iter=1000, lr=0.001, tolerance=1e-5):
-        self.C = C
-        self.max_iter = max_iter
-        self.lr = lr
-        self.tolerance = tolerance
-        self.w = None
-        self.b = 0
+class SVM:
+    def __init__(self, lambda_param=1e-4, epoch=1000, batch_size=256, tol=1e-4, random_state=42):
+        self.lambda_param = lambda_param
+        self.epoch = epoch
+        self.batch_size = batch_size
+        self.tol = tol
+        self.random_state = random_state
+        self.is_trained = False
 
     def fit(self, X, y):
         if hasattr(X, "toarray"):
-            X = X.toarray()
-        y_binary = np.where(y <= 0, -1, 1)
+            X = csr_matrix(X)
+        
+        self.num_samples, self.num_features = X.shape
 
-        n_samples, n_features = X.shape
+        y_unique = np.unique(y)
+        if len(y_unique) != 2:
+            raise ValueError("Phân loại nhị phân cần 2 nhãn")
+        if set(y_unique) == {0, 1}:
+            y = np.where(y == 0, -1, 1)
+        
+        self.w = np.zeros(self.num_features, dtype=np.float32)
+        self.b = 0.0
 
-        self.w = np.zeros(n_features)
+        np.random.seed(self.random_state)
+        t = 0
+        previous_objective = float("inf")
 
-        alpha = np.zeros(n_samples)
-        K = np.dot(X, X.T) * np.outer(y_binary, y_binary)
-        for iteration in range(self.max_iter):
-            alpha_prev = alpha.copy()
+        for ep in range(1, self.epoch + 1):
+            indices = np.random.permutation(self.num_samples)
+            for start in range(0, self.num_samples, self.batch_size):
+                t += 1
+                end = start + self.batch_size
+                batch_idx = indices[start:end]
+                X_batch = X[batch_idx]
+                y_batch = y[batch_idx]
+                
+                eta = 1.0 / (self.lambda_param * t)
+                margins = y_batch * (X_batch.dot(self.w) + self.b)
+                mask = margins < 1
+                self.w *= (1 - eta * self.lambda_param)
+                if np.any(mask):
+                    X_violate = X_batch[mask]
+                    y_violate = y_batch[mask]
+                    self.w += (eta / self.batch_size) * np.dot(y_violate, X_violate.toarray() if hasattr(X_violate, "toarray") else X_violate)
+                    self.b += (eta / self.batch_size) * np.sum(y_violate)
+                norm_w = np.linalg.norm(self.w)
+                factor = min(1, (1.0 / np.sqrt(self.lambda_param)) / (norm_w))
+                self.w *= factor
 
-            margins = 1 - K.dot(alpha)
-
-            mask = margins > 0
-            alpha[mask] += self.lr * margins[mask]
-
-            alpha = np.clip(alpha, 0, self.C)
-
-            if np.max(np.abs(alpha - alpha_prev)) < self.tolerance:
+            decision = X.dot(self.w) + self.b
+            hinge_losses = np.maximum(0, 1 - y * decision)
+            objective = 0.5 * self.lambda_param * np.dot(self.w, self.w) + np.mean(hinge_losses)
+            
+            if ep % 10 == 0:
+                print(f"Epoch {ep}, Giá trị hàm mục tiêu: {objective:.4f}")
+            
+            if abs(previous_objective - objective) < self.tol:
+                print(f"Dừng sớm tại epoch {ep}, giá trị hàm mục tiêu thay đổi: {abs(previous_objective - objective):.6f}")
                 break
-        self.w = np.dot(X.T, alpha * y_binary)
+            previous_objective = objective
 
-        sv_indices = alpha > 1e-5
-        if np.any(sv_indices):
-            self.b = np.mean(y_binary[sv_indices] - np.dot(X[sv_indices], self.w))
+        self.is_trained = True
+        return self
 
     def predict(self, X):
-        """Predict class labels for samples in X."""
-        if hasattr(X, "toarray"):
-            X = X.toarray()
+        if not self.is_trained:
+            raise Exception("Mô hình chưa được huấn luỵen")
             
-        return np.where(np.dot(X, self.w) + self.b >= 0, 1, 0)
-
-    def get_parameters(self):
-      print(f'w: {self.w}')
-      print(f'b: {self.b}')
-
-    def decision_function(self, X):
-        """Return distance of samples to the decision boundary."""
         if hasattr(X, "toarray"):
-            X = X.toarray()
+            X = csr_matrix(X)
             
-        return np.dot(X, self.w) + self.b
+        decision = X.dot(self.w) + self.b
+        return np.where(decision >= 0, 1, 0)
 
 @st.cache_resource
 def load_model():
     try:
         with open('linear_svm.pkl', 'rb') as model_file:
             model = pickle.load(model_file)
-        with open('hashing_vectorizer.pkl', 'rb') as vectorizer_file:
+        with open('vectorizer.pkl', 'rb') as vectorizer_file:
             vectorizer = pickle.load(vectorizer_file)
         return model, vectorizer
     except FileNotFoundError:
@@ -87,44 +110,28 @@ def load_model():
         return None, None
 
 model, vectorizer = load_model()
-
-def remove_html_xml(text):
-    try:
-        soup = BeautifulSoup(text, 'html.parser')
-        return soup.get_text()
-    except:
-        return text
-
+ENGLISH_STOP_WORDS = set(stopwords.words('english'))
+stemmer = SnowballStemmer('english')
 def remove_special_characters(word):
-    return word.translate(str.maketrans('', '', string.punctuation))
-
-def remove_urls(text):
-    return re.sub(r'http\S+|www\S+|\S+\.(com|net|org|edu|gov|mil|int|info|biz|co)\S+', '', text)
-
-def remove_emails(text):
-    return re.sub(r'\S+@\S+', '', text)
-
+    return re.sub(r'[^a-zA-Z\s]', '', word)
+def remove_stop_words(words):
+    return [word for word in words if word not in ENGLISH_STOP_WORDS]
+def remove_url(word):
+    return re.sub(r"http\S+", "", word)
+def stem_text(text):
+    tokens = nltk.word_tokenize(text)
+    stemmed_tokens = [stemmer.stem(token) for token in tokens]
+    return ' '.join(stemmed_tokens)
 def preprocess_text(text):
-    text = text.lower()
-    text = re.sub(r'[^\x00-\x7F]+', '', text) if isinstance(text, str) else text
-    text = re.sub(r'^\s+|\s+$', '', text).strip() if isinstance(text, str) else text
-    text = remove_html_xml(text)
     text = remove_special_characters(text)
-    text = remove_urls(text)
-    text = remove_emails(text)
-    tokens = word_tokenize(text)
-    ENGLISH_STOP_WORDS = set(stopwords.words('english'))
-    tokens = [word for word in tokens if word not in ENGLISH_STOP_WORDS]
-    stemmer = PorterStemmer()
-    tokens = [stemmer.stem(word) for word in tokens]
-    return ' '.join(tokens)
-
-
+    text = remove_url(text)
+    text = word_tokenize(text)
+    text = remove_stop_words(text)
+    text = ' '.join(text)
+    text = stem_text(text)
+    return text
 st.title("Demo phân loại email tiếng Anh spam ")
-
-
 user_input = st.text_area("Nhập nội dung email:", height=200)
-
 if st.button("Kiểm tra"):
     if not user_input:
         st.warning("Hãy nhập nội dung để phân tích")
