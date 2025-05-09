@@ -79,7 +79,7 @@
 		\begin{block}{Dữ liệu được lấy trên \href{https://www.kaggle.com/datasets/purusinghvi/email-spam-classification-dataset}{Kaggle}}
 			\begin{itemize}
 				\item Combined Spam Email CSV of 2007 TREC Public Spam Corpus and Enron-Spam Dataset
-				\item  83446 bản ghi email bằng tiếng Anh được phân loại thành 2 nhãn là Spam và Non-spam
+				\item  83446 bản ghi email bằng tiếng Anh được phân loại thành 2 nhãn là Spam và Non-spam trong đó số email spam: 43910 và số email ham:(không spam) là 39538
 			\end{itemize}
 		\end{block}
 		% \begin{block}{Advantages of using \LaTeX ~with the beamer package:}
@@ -109,11 +109,6 @@
 		\begin{itemize}
 			\item Mục tiêu của SVM là tối ưu hóa khoảng cách giữa các điểm dữ liệu của hai lớp. 
 			\item Hàm mục tiêu được xây dựng sao cho margin giữa hai lớp là lớn nhất, đồng thời đảm bảo rằng không có điểm nào bị sai phân loại.
-			\item Hàm mục tiêu của SVM là tối thiểu hóa hàm sau:
-			\[
-			(w, b) = \arg \max_{w, b} \left\{ \min_n y_n \frac{\left( w^T x_n + b \right)}{\| w \|_2} \right\}
-			= \arg \max_{w, b} \left\{ \frac{1}{\| w \|_2} \min_n y_n \left( w^T x_n + b \right) \right\}
-			\]
 		\end{itemize}
 		
 	\end{frame}
@@ -193,11 +188,11 @@
 	\end{frame}
 	
 	\begin{frame}{Điều kiện KKT}
-		\begin{align}
+		\begin{align*}
 			& \lambda_i \geq 0 \quad \forall i=1,\ldots,n \quad\\
 			& y^{(i)}(\mathbf{w} \cdot \mathbf{x}^{(i)} + b) - 1 \geq 0 \quad \forall i=1,\ldots,n \quad\\
 			& \lambda_i [y^{(i)}(\mathbf{w} \cdot \mathbf{x}^{(i)} + b) - 1] = 0 \quad \forall i=1,\ldots,n \quad 
-		\end{align}
+		\end{align*}
 	\end{frame}
 	
 	\begin{frame}{Phương trình Lagrange và điều kiện KKT}
@@ -212,10 +207,10 @@
 			\frac{\partial \mathcal{L}}{\partial \mathbf{w}} &= \mathbf{w} - \sum_{i=1}^{n} \lambda_i y^{(i)} \mathbf{x}^{(i)} = \mathbf{0} \\
 			\frac{\partial \mathcal{L}}{\partial b} &= - \sum_{i=1}^{n} \lambda_i y^{(i)} = 0
 		\end{align}
-		Từ (4): \begin{equation}
+		Từ (1): \begin{equation}
 			\mathbf{w} = \sum_{i=1}^{n} \lambda_i y^{(i)} \mathbf{x}^{(i)}
 		\end{equation}
-		Từ (5): \begin{equation}
+		Từ (2): \begin{equation}
 			\sum_{i=1}^{n} \lambda_i y^{(i)} = 0
 		\end{equation}
 	\end{frame}
@@ -238,11 +233,11 @@
 	
 	\begin{frame}{Quy về bài toán}
 		Có thể quy về bài toán tìm:
-		\begin{align}
+		\begin{align*}
 			\hat{\lambda} &= \arg\max_{\lambda} \tilde{L}(\lambda) \\
 			&= \arg\max_{\lambda} \left\{\sum_{i=1}^n \lambda_i - \frac{1}{2}\sum_{i=1}^n \sum_{j=1}^n \lambda_i \lambda_j y^{(i)}y^{(j)}\mathbf{x}^{(i)T}\mathbf{x}^{(j)}\right\} \\
 			&\text{với điều kiện } \lambda_i \geq 0, \sum_{i=0}^n \lambda_i y^{(i)} = 0, (i=1,2,\ldots,n).
-		\end{align}
+		\end{align*}
 	\end{frame}
 	\subsubsection{Ước lượng $\hat{\lambda}$}
 	\begin{frame}{Ước lượng $\hat{\lambda}$ bằng phương pháp Gradient Descent}
