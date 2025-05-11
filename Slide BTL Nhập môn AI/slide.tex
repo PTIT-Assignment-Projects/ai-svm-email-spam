@@ -213,7 +213,7 @@
 			L(\bm{w}, b, \lambda_1, \dots, \lambda_n) &\equiv \frac{1}{2}\|\bm{w}\|^2 - \sum_{i=1}^n \lambda_i \{ y^{(i)} (\bm{w}^{\top} \bm{x}^{(i)} + b) - 1 \} \\
 			&= \frac{1}{2}\|\bm{w}\|^2 - \underbrace{\sum_{i=1}^n \lambda_i y^{(i)} \bm{x}^{(i)\top}}_{=\bm{w}^{\top}} \bm{w} - \underbrace{\sum_{i=1}^n\lambda_i y^{(i)}}_{=0} b + \sum_{i=1}^n \lambda_i 
 		\end{align*}
-	\end{frame}
+ 	\end{frame}
 	
 	\begin{frame}{Điều kiện KKT}
 		\begin{align*}
@@ -496,6 +496,14 @@
 			\label{fig:snowball-stemmer-apply}
 		\end{figure}
 	\end{frame}
+	
+	\begin{frame}{TF-IDF vectorization}
+		\begin{figure}
+			\centering
+			\includegraphics[width=1\linewidth]{pic/tf-idf-formula.png}
+			\label{fig:tf-idf-formula}
+		\end{figure}
+	\end{frame}
 	\begin{frame}{TF-IDF vectorization}
 		\begin{figure}
 			\centering
@@ -533,7 +541,7 @@
 	\begin{frame}{Kết quả}
 		\begin{figure}
 			\centering
-			\includegraphics[width=1\linewidth]{pic/hardmargin-svm-result2000.png}
+			\includegraphics[width=0.6\linewidth]{pic/hardmargin-svm-result2000.png}
 			\label{fig:hardmargin-svm-result2000}
 		\end{figure}
 	\end{frame}
@@ -562,14 +570,6 @@
 			\centering
 			\includegraphics[width=0.6\linewidth]{pic/svm-pegasus.png}
 			\label{fig:svm-pegasus}
-		\end{figure}
-	\end{frame}
-	\subsubsection{Chạy thử trên tập dữ liệu}
-	\begin{frame}{Kết quả}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.7\linewidth]{pic/svm-pegasos-result2000.png}
-			\label{fig:svm-pegasos-result2000}
 		\end{figure}
 	\end{frame}
 	\subsubsection{So sánh với HardMarginSVM}
@@ -640,14 +640,14 @@
 			\label{fig:demo-ai-sys}
 		\end{figure}
 	\end{frame}
-	\begin{frame}{Giao diện demo spam}
+	\begin{frame}{\href{https://ai-svm-deploy.onrender.com}{Giao diện demo spam}}
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.6\linewidth]{pic/demo-spam.png}
 			\label{fig:demo-spam}
 		\end{figure}
 	\end{frame}
-	\begin{frame}{Giao diện demo không spam}
+	\begin{frame}{\href{https://ai-svm-deploy.onrender.com}{Giao diện demo không spam}}
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.6\linewidth]{pic/demo-not-spam.png}
