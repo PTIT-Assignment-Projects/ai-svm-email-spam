@@ -2,7 +2,7 @@
 
 import pandas as pd
 
-df = pd.read_csv("https://github.com/PTIT-Assignment-Projects/ai-svm-email-spam/raw/refs/heads/main/dataset/combined_data.csv")
+df = pd.read_csv("https://media.githubusercontent.com/media/PTIT-Assignment-Projects/ai-svm-email-spam/refs/heads/main/dataset/combined_data.csv")
 print(df.shape)
 
 target_column = 'label'  # Replace with the actual name of your target column
